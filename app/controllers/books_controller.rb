@@ -15,6 +15,17 @@ class BooksController < ApplicationController
         render :new
     end
     def create
-        render :plain => "hassan"
+        @book = Book.new(book_params)
+        if @book.save
+            redirect_to book_url(@book)
+        else
+            render :json => @book.errors.full_messages, status: :unprocessable_entity
+        end
+    end
+
+    protected
+
+    def book_params
+        params.require(:books).permit(:author, :category, :year, :owner, :description)
     end
 end

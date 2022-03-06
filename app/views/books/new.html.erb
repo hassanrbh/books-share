@@ -1,5 +1,5 @@
 <h1>Add Books To The lists :</h1>
-<form action="<% books_path %>" method="post"> 
+<form action="/books" method="post"> 
     <label for="owner" style="font-family: roboto; font-weight: bold; margin: 10px;">Owner</label>
     <select name="books[owner]" id="owner">
         <option disabled selected>-- Select You 🤬  --</option>
@@ -22,7 +22,7 @@
     <input type="date" id="year" name="books[year]">
     <br><br>
     <label for="description" style="font-family: roboto; font-weight: bold; margin: 10px;">Description</label>
-    <textarea id="description" name="description"></textarea>
+    <textarea id="description" name="books[description]"></textarea>
     <br>
 
     <input type="submit" value="Add Book" style="display: flex; color: green; font-size: 17px; font-family: roboto; font-weight: bold; margin: 10px;">
