@@ -1,0 +1,30 @@
+<h1>Add Books To The lists :</h1>
+<form action="<% books_path %>" method="post"> 
+    <label for="owner" style="font-family: roboto; font-weight: bold; margin: 10px;">Owner</label>
+    <select name="books[owner]" id="owner">
+        <option disabled selected>-- Select You 🤬  --</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+    </select>
+    <br>
+    <label for="author" style="font-family: roboto; font-weight: bold; margin: 10px;">Author</label>
+    <input type="text" id="author" name="books[author]">
+    <br>
+    <label for="category" style="font-family: roboto; font-weight: bold; margin: 10px;">Category</label>
+    <select id="category" name="books[category]">
+        <option disabled selected>-- Select Me 🥺 --</option>
+        <option value="Funny">fun</label>
+        <option value="Hacking">hacking</label>
+        <option value="Fiction">fiction</label>
+    </select>
+    <br>
+    <label for="year" style="font-family: roboto; font-weight: bold; margin: 10px;">Year</label>
+    <input type="date" id="year" name="books[year]">
+    <br><br>
+    <label for="description" style="font-family: roboto; font-weight: bold; margin: 10px;">Description</label>
+    <textarea id="description" name="description"></textarea>
+    <br>
+
+    <input type="submit" value="Add Book" style="display: flex; color: green; font-size: 17px; font-family: roboto; font-weight: bold; margin: 10px;">
+
+</form>
