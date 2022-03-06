@@ -31,8 +31,13 @@ class BooksController < ApplicationController
         render :edit
     end
 
-    def create
-
+    def update
+        @book = Book.find_by(:id => params[:id])
+        if @book.update(book_params)
+            redirect_to book_url(@book)
+        else
+            render :edit
+        end
     end
     protected
 
