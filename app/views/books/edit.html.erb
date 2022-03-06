@@ -1,0 +1,40 @@
+<h1>Edit Book of <%= @book.author %></h1>
+
+
+<form action="<% book_url(@book) %>" method="post"> 
+    <input type="hidden" name="_method" value="PATCH">
+    <label for="owner" style="font-family: roboto; font-weight: bold; margin: 10px;">Owner</label>
+    <select name="books[owner]" id="owner" value="<%= @book.owner %>">
+        <option disabled>-- Select You 🤬  --</option>
+        <option value="true"
+        <%= @book.owner == "true" ? "selected" : "" %>>True</option>
+        <option value="false"
+        <%= @book.owner == "false" ? "selected" : "" %>>False</option>
+    </select>
+    <br>
+    <label for="author" style="font-family: roboto; font-weight: bold; margin: 10px;">Author</label>
+    <input type="text" id="author" name="books[author]" value="<%= @book.author%>">
+    <br>
+    <label for="category" style="font-family: roboto; font-weight: bold; margin: 10px;">Category</label>
+    <select id="category" name="books[category]">
+        <option disabled>-- Select Me 🥺 --</option>
+        <option value="Funny"
+        <%= @book.category == "Funny" ? "selected" : "" %>>fun</option>
+        <option value="Hacking"
+        <%= @book.category == "Hacking" ? "selected" : "" %> >hacking</option>
+        <option value="Fiction"
+        <%= @book.category == "Fiction" ? "selected" : "" %> >fiction</option>
+    </select>
+    <br>
+    <label for="year" style="font-family: roboto; font-weight: bold; margin: 10px;">Year</label>
+    <input type="text" id="year" name="books[year]" value="<%= @book.year %>">
+    <br><br>
+    <label for="description" style="font-family: roboto; font-weight: bold; margin: 10px;">Description</label>
+    <textarea id="description" name="books[description]">
+        <%= @book.description %>
+    </textarea>
+    <br>
+
+    <input type="submit" value="Update Book" style="display: flex; color: green; font-size: 17px; font-family: roboto; font-weight: bold; margin: 10px;">
+
+</form>

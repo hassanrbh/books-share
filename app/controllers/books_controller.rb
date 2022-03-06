@@ -3,6 +3,7 @@ class BooksController < ApplicationController
         @books = Book.all
         render :index
     end
+
     def show
         @book = Book.find_by(:id => params[:id])
         if @book
@@ -11,9 +12,11 @@ class BooksController < ApplicationController
             redirect_to books_path
         end
     end
+
     def new
         render :new
     end
+
     def create
         @book = Book.new(book_params)
         if @book.save
@@ -23,6 +26,14 @@ class BooksController < ApplicationController
         end
     end
 
+    def edit
+        @book = Book.find_by(:id => params[:id])
+        render :edit
+    end
+
+    def create
+
+    end
     protected
 
     def book_params
