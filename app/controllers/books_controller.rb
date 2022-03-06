@@ -14,6 +14,7 @@ class BooksController < ApplicationController
     end
 
     def new
+        @book = Book.new
         render :new
     end
 

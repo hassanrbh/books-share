@@ -1,5 +1,8 @@
 <h1>Edit Book of <%= @book.author %></h1>
-<form action="<%= book_path(@book) %>" method="post"> 
+
+<%= render 'form', book: @book, action: :edit %>
+
+<!-- <form action="<%= book_path(@book) %>" method="post"> 
     <input type="hidden" name="_method" value="patch">
     <label for="owner" style="font-family: roboto; font-weight: bold; margin: 10px;">Owner</label>
     <select name="books[owner]" id="owner" value="<%= @book.owner %>">
@@ -35,4 +38,4 @@
 
     <input type="submit" value="Update Book" style="display: flex; color: green; font-size: 17px; font-family: roboto; font-weight: bold; margin: 10px;">
 
-</form>
+</form> -->

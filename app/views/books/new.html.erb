@@ -1,5 +1,8 @@
 <h1>Add Books To The lists :</h1>
-<form action="/books" method="post"> 
+
+<%= render 'form', :action => :new, book: @book%>
+
+<!-- <form action="/books" method="post"> 
     <label for="owner" style="font-family: roboto; font-weight: bold; margin: 10px;">Owner</label>
     <select name="books[owner]" id="owner">
         <option disabled selected>-- Select You 🤬  --</option>
@@ -27,4 +30,4 @@
 
     <input type="submit" value="Add Book" style="display: flex; color: green; font-size: 17px; font-family: roboto; font-weight: bold; margin: 10px;">
 
-</form>
+</form> -->
